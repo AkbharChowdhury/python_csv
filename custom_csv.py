@@ -1,15 +1,15 @@
 import csv
+
+
 class CustomCSV:
     @staticmethod
-    def write_to_csv_file(csv_file='students.csv', fields_to_write=['name', 'address']):
-        if fields_to_write is None:
-            fields_to_write = ['name', 'address']
+    def write_to_csv_file(csv_file='students.csv'):
         student = {
             'name': input("name: "),
             'address': input("address: ")
         }
         with open(csv_file, "a") as file:
-            writer = csv.DictWriter(file, fieldnames=fields_to_write)
+            writer = csv.DictWriter(file, fieldnames=['name', 'address'])
             writer.writerow(student)
 
     @staticmethod

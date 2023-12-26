@@ -8,7 +8,7 @@ class Student:
 
     @staticmethod
     def print_details(students):
-        for student in sorted(students, key=lambda i: i['name']):
+        for student in sorted(students, key=lambda i: i['name'], reverse=True):
             s = Student.from_dictionary(student)
             print(f'{s.name.title()} lives in {s.address}')
 

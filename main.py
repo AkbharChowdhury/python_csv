@@ -1,15 +1,5 @@
-
 from custom_csv import CustomCSV
 from student import Student
-
-# lst = []
-    # for row in data:
-    #     if row['username'] == username and row['password'] == password:
-    #         lst.append(True)
-    # lst.append(False)
-    # return any(lst)
-
-
 if __name__ == '__main__':
 
     if res := (input("would you like to add students? ['Y','N'] ").lower()) == "y":
