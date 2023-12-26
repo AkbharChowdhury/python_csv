@@ -1,5 +1,6 @@
-import csv
 from dataclasses import dataclass
+
+from custom_csv import CustomCSV
 
 
 @dataclass(frozen=True, slots=True)
@@ -14,24 +15,13 @@ class Student:
             print(f'{s.name.title()} lives in {s.address}')
 
 
-class CustomCSV:
-    @staticmethod
-    def write_to_csv_file(csv_file='students.csv'):
-        student = {
-            'name': input("name: "),
-            'address': input("address: ")
-        }
-        with open(csv_file, "a") as file:
-            writer = csv.DictWriter(file, fieldnames=['name', 'address'])
-            writer.writerow(student)
 
-    @staticmethod
-    def read_csv_file(csv_file='students.csv'):
-        data = []
-        with open(csv_file) as file:
-            for row in csv.DictReader(file):
-                data.append(row)
-        return data
+    # lst = []
+    # for row in data:
+    #     if row['username'] == username and row['password'] == password:
+    #         lst.append(True)
+    # lst.append(False)
+    # return any(lst)
 
 
 if __name__ == '__main__':
